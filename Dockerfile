@@ -109,7 +109,7 @@ COPY --from=skysider/glibc_builder32:2.30 /glibc/2.30/32 /glibc/2.30/32
 COPY --from=skysider/glibc_builder64:2.31 /glibc/2.31/64 /glibc/2.31/64
 COPY --from=skysider/glibc_builder32:2.31 /glibc/2.31/32 /glibc/2.31/32
 
-RUN rm -rf /usr/bin/python && ln -s /usr/bin/python3.6 /usr/bin/python
+RUN rm -rf /usr/bin/python && ln -s /usr/bin/python3 /usr/bin/python
 
 COPY linux_server linux_server64  /ctf/dbgsrv/
 
