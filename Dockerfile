@@ -1,4 +1,4 @@
-FROM phusion/baseimage:master-amd64
+FROM phusion/baseimage:bionic-1.0.0-amd64
 
 LABEL version="1.0 beta"
 LABEL description="Modified from skysider/pwndocker"
