@@ -56,8 +56,8 @@ RUN wget https://github.com/radareorg/radare2/releases/download/4.4.0/radare2_4.
 
 RUN rm -rf /usr/bin/python && ln -s /usr/bin/python3.6 /usr/bin/python
 
-RUN pip install -U pip && \
-    pip install --no-cache-dir \
+RUN python -m pip install -U pip && \
+    python -m pip install --no-cache-dir \
     ropgadget \
     pwntools \
     z3-solver \
