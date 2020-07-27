@@ -54,10 +54,8 @@ RUN ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
 RUN wget https://github.com/radareorg/radare2/releases/download/4.4.0/radare2_4.4.0_amd64.deb && \
     dpkg -i radare2_4.4.0_amd64.deb && rm radare2_4.4.0_amd64.deb
 
-RUN rm -rf /usr/bin/python && ln -s /usr/bin/python3.6 /usr/bin/python
-
-RUN python -m pip install -U pip && \
-    python -m pip install --no-cache-dir \
+RUN python3 -m pip install -U pip && \
+    python3 -m pip install --no-cache-dir \
     ropgadget \
     pwntools \
     z3-solver \
@@ -110,6 +108,8 @@ COPY --from=skysider/glibc_builder32:2.30 /glibc/2.30/32 /glibc/2.30/32
 
 COPY --from=skysider/glibc_builder64:2.31 /glibc/2.31/64 /glibc/2.31/64
 COPY --from=skysider/glibc_builder32:2.31 /glibc/2.31/32 /glibc/2.31/32
+
+RUN rm -rf /usr/bin/python && ln -s /usr/bin/python3.6 /usr/bin/python
 
 COPY linux_server linux_server64  /ctf/dbgsrv/
 
