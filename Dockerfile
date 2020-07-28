@@ -81,9 +81,7 @@ RUN git clone --depth 1 https://github.com/scwuaptx/Pwngdb.git /root/Pwngdb && \
 RUN git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime && sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 RUN git clone --recursive https://github.com/Ma5ker/LibcSearcher.git /LibcSearcher && \ 
-    cd /LibcSearcher && python3 setup.py develop && cd ./libc-database && ./get
-
-RUN cd /libctoolkit/libc-database && ./get
+    cd /LibcSearcher && python3 setup.py develop && cd /LibcSearcher/libc-database && ./get
 
 WORKDIR /ctf/work/
 
