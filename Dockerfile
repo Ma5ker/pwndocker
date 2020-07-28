@@ -78,13 +78,14 @@ RUN git clone --depth 1 https://github.com/scwuaptx/Pwngdb.git /root/Pwngdb && \
     cd /root/Pwngdb && cat /root/Pwngdb/.gdbinit  >> /root/.gdbinit && \
     sed -i "s?source ~/peda/peda.py?# source ~/peda/peda.py?g" /root/.gdbinit
 
-RUN git clone --depth 1 https://github.com/niklasb/libc-database.git libc-database && \
-    cd libc-database && ./get || echo "/libc-database/" > ~/.libcdb_path
-
 RUN git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime && sh ~/.vim_runtime/install_awesome_vimrc.sh
 
-RUN git clone https://github.com/Ma5ker/LibcSearcher.git /LibcSearcher && \ 
-    cd /LibcSearcher && python3 setup.py develop
+
+
+RUN git clone https://github.com/Ma5ker/libctoolkit.git /libctoolkit && \ 
+    cd /libctoolkit && python3 setup.py develop
+
+RUN cd /libctoolkit/libc-database && ./get
 
 WORKDIR /ctf/work/
 
