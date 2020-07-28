@@ -1,11 +1,11 @@
 # pwndocker
 
-customize my pwndocker (modified from skysider/pwndocker)
+customize my pwndocker (modified from [skysider/pwndocker](https://github.com/skysider/pwndocker))
 
-[+] change baseimage ubuntu version to 18.04LTS
+- [x] change baseimage ubuntu version to 18.04LTS
 
-[+] add my libcsearcher(Synced)
+- [x] add my libcsearcher(Synced)
 
-[+] add amix/vimrc
+- [x] add amix/vimrc
 
-[+] change the slink /usr/bin/python->/usr/bin/python2 to /usr/bin/python->/usr/bin/python3
+- [x] change the slink /usr/bin/python->/usr/bin/python2 to /usr/bin/python->/usr/bin/python3
