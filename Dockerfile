@@ -85,7 +85,7 @@ RUN git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime && sh ~
 RUN git clone https://github.com/Ma5ker/libctoolkit.git /libctoolkit && \ 
     cd /libctoolkit && python3 setup.py develop
 
-RUN cd /libctoolkit/libc-database && ./get
+RUN /libctoolkit/libc-database/get
 
 WORKDIR /ctf/work/
 
